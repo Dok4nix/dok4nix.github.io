@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   $(".box").each(function() {
     const randomNumber = () => Math.round(Math.random());
     if(randomNumber()===1) {
@@ -37,12 +37,13 @@ const winCondition = () => {
         return ".3";
       }
     })();
-
+    if(!winCondition()) {
     $(event.target).toggleClass("toggled");
     $(event.target).prev().toggleClass("toggled");
     $(event.target).next().toggleClass("toggled");
     $(event.target).parent().prev().find(number).toggleClass("toggled");
     $(event.target).parent().next().find(number).toggleClass("toggled");
+    }
     if(winCondition()) {
       $("#reset").text("Wygrana");
     }
