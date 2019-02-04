@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  
+  $(".box").each(function() {
+    const randomNumber = () => Math.round(Math.random());
+    if(randomNumber()===1) {
+      $(this).toggleClass("toggled");
+    }
+  })
 
 $("#reset").on('click', () => {
   $("#reset").text("Reset");
@@ -9,6 +16,7 @@ $("#reset").on('click', () => {
     }
   })
 });
+
 const winCondition = () => {
   let won = 1;
   $(".box").each(function() {
