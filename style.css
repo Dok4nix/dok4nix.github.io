@@ -147,6 +147,10 @@ p {
 }
 
 @media (max-width: 1225px) {
+  :root {
+    font-size: 12px;
+  }
+
   .title-image {
     transform: rotate(0);
   }
