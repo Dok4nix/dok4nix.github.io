@@ -147,7 +147,7 @@ p {
 }
 
 @media (max-width: 1225px) {
-  :root {
+  body {
     font-size: 12px;
   }
 
