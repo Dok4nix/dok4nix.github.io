@@ -51,7 +51,7 @@ input {
 button {
   background: white;
   height: 4rem;
-  width: 440px;
+  max-width: 440px;
 }
 
 button:hover {
@@ -71,7 +71,7 @@ button:hover {
   width: 300px;
 }
 
-.heart {  
+.heart {
   position: relative;
   bottom: 160px;
   transform: rotate(-45deg);
