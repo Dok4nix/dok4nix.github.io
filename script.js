@@ -1,52 +1,39 @@
-$(document).ready(function() {
+let submitButton = document.getElementById("submit-button");
+submitButton.addEventListener("click", playLoveMachine);
 
-  $(".box").each(function() {
-    const randomNumber = () => Math.round(Math.random());
-    if(randomNumber()===1) {
-      $(this).toggleClass("toggled");
-    }
-  })
+function playLoveMachine() {
+  let yourLoveNumber = document.getElementById("your-name").value;
+  let partnersLoveNumber = document.getElementById("partner-name").value;
+  let loveDisplay = document.getElementById("love-display");
+  let lovePercent = document.getElementById("love-percent");
+  yourLoveNumber = getNumberFromName(yourLoveNumber);
+  partnersLoveNumber = getNumberFromName(partnersLoveNumber);
+  let loveScore = calculateLoveScore(yourLoveNumber, partnersLoveNumber);
 
-$("#reset").on('click', () => {
-  $("#reset").text("Reset");
-  $(".box").each(function() {
-    const randomNumber = () => Math.round(Math.random());
-    if(randomNumber()===1) {
-      $(this).toggleClass("toggled");
-    }
-  })
-});
-
-const winCondition = () => {
-  let won = 1;
-  $(".box").each(function() {
-    if(!$(this).hasClass("toggled")) {
-      won = 0;
-    }
-  })
-  return won;
+  if (yourLoveNumber > 0 && partnersLoveNumber > 0) {
+    loveDisplay.style.display = "block";
+    lovePercent.innerHTML = `${loveScore}%`;
+  }
 }
 
-  $(".box").on('click', (event) => {
-    let number = (() => {
-      if ($(event.target).hasClass("1")) {
-        return ".1";
-      } else if ($(event.target).hasClass("2")) {
-        return ".2";
-      } else {
-        return ".3";
-      }
-    })();
-    if(!winCondition()) {
-    $(event.target).toggleClass("toggled");
-    $(event.target).prev().toggleClass("toggled");
-    $(event.target).next().toggleClass("toggled");
-    $(event.target).parent().prev().find(number).toggleClass("toggled");
-    $(event.target).parent().next().find(number).toggleClass("toggled");
-    }
-    if(winCondition()) {
-      $("#reset").text("Wygrana");
-    }
-  })
+function calculateLoveScore(yourLoveNumber, partnersLoveNumber) {
+  let myLoveNumber = getNumberFromName("Dominik");
+  let gfLoveNumber = getNumberFromName("Patrycja");
 
-});
+  loveDifference = (myLoveNumber + gfLoveNumber) - (yourLoveNumber + partnersLoveNumber);
+  loveValue = 100 - Math.abs(loveDifference * 3);
+  return loveValue;
+}
+
+function getNumberFromName(name) {
+  return name.replace(/ą/g, 'a').replace(/Ą/g, 'A')
+    .replace(/ć/g, 'c').replace(/Ć/g, 'C')
+    .replace(/ę/g, 'e').replace(/Ę/g, 'E')
+    .replace(/ł/g, 'l').replace(/Ł/g, 'L')
+    .replace(/ń/g, 'n').replace(/Ń/g, 'N')
+    .replace(/ó/g, 'o').replace(/Ó/g, 'O')
+    .replace(/ś/g, 's').replace(/Ś/g, 'S')
+    .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
+    .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
+    .toUpperCase().charCodeAt(0);
+}
