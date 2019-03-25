@@ -96,3 +96,24 @@ button:hover {
   z-index: 1;
   position: relative;
 }
+
+@media only screen and (max-width: 500px) {
+  body {
+    padding-top: 5vh;
+  }
+
+  input {
+    width: 70%;
+    margin: 20px;
+    height: 2rem;
+  }
+
+  button {
+    margin-top: 50px;
+    width: 80%;
+  }
+
+  label {
+    text-align: center;
+  }
+}
