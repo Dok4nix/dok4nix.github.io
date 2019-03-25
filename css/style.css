@@ -20,7 +20,7 @@ button {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 440px;
   margin: 0 auto 200px;
   text-align: center;
 }
@@ -33,7 +33,7 @@ p {
 label {
   display: block;
   text-align: right;
-  margin: 30px;
+  margin: 2rem 0;
 }
 
 input,
@@ -45,13 +45,13 @@ button {
 
 input {
   height: 2rem;
-  width: 200px;
+  width: 12rem;
 }
 
 button {
   background: white;
   height: 4rem;
-  max-width: 440px;
+  width: 100%;
 }
 
 button:hover {
@@ -91,7 +91,7 @@ button:hover {
 }
 
 #love-percent {
-  font-size: 150px;
+  font-size: 10rem;
   margin: 0;
   z-index: 1;
   position: relative;
