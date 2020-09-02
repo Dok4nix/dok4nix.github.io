@@ -62,7 +62,7 @@ figcaption {
     font-weight: 700;
     color: #C5C2C2;
     text-align: center;
-    margin-top: -40px;
+   /* margin-top: -40px; */
     padding: 5px;
     margin-bottom: 50px;
 }
