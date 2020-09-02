@@ -116,14 +116,22 @@ a {
 }
 
 @media (max-width: 930px) {
+    header {
+        height: 220px;
+        display: flex;
+        text-align: center;
+        align-items: flex-end;
+        justify-content: center;
+        background-image: none;
+        background-color: rgb(22, 20, 20);
+    }
+
+    .title {
+        position: static;
+    }
+
     figcaption {
         font-size: 24px;
         margin-top: -30px;
     }
-}
-
-@media (max-width: 480px) { 
-    .title { 
-        right: 0;
-    } 
 } 
