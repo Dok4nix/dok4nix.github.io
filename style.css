@@ -70,7 +70,7 @@ figcaption {
 .text {
     max-width: 815px;
     margin: auto;
-    padding: 90px 0;
+    padding: 90px 20px;
     color: #E1DEDE;
 }
 
@@ -93,6 +93,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 20px;
 }
 
 footer p {
@@ -100,3 +101,9 @@ footer p {
     font-size: 20px;
     color: #565656;
 }
+
+@media (max-width: 480px) { 
+    .title { 
+        right: 0;
+    } 
+} 
